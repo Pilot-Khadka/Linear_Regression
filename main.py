@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-
+from os import chdir
+chdir("/Users/pilot/Desktop/archive")
 
 # removing empty rows
 def clean(df):
@@ -20,14 +21,14 @@ def draw(df, string):
 
 
 # Training Data
-train = pd.read_csv("/Users/pilot/Desktop/archive/train.csv")
+train = pd.read_csv("train.csv")
 clean(train)
 # draw(train)
 X_train = train["x"].values.reshape(-1, 1)
 Y_train = train["y"].values.reshape(-1, 1)
 
 # Testing Data
-test = pd.read_csv("/Users/pilot/Desktop/archive/test.csv")
+test = pd.read_csv("test.csv")
 clean(test)
 # draw(test)
 X_test = test["x"].values.reshape(-1, 1)
